@@ -6,7 +6,7 @@ plugins {
     id 'org.hidetake.swagger.generator' version '2.18.2'
 }
 
-group = 'com.chakangongbu.api'
+group = 'com.chakgong.api'
 version = '0.1.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_15
 
