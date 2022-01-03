@@ -15,7 +15,7 @@ public interface UserRepository extends CrudRepository<UserEntity, UUID> {
 
   Optional<UserEntity> findByUsername(String username);
 
-  @Query(value = "select count(u.*) from ecomm.user u where u.username = :username or u.email = :email", nativeQuery = true)
+  @Query(value = "select count(u.*) from chakgong.user u where u.username = :username or u.email = :email", nativeQuery = true)
   Integer findByUsernameOrEmail(String username, String email);
 }
 

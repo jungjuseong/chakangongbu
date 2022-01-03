@@ -15,3 +15,14 @@
     "Link": "org.springframework.hateoas.Link"
   }
 }
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'filterChainFailureHandler':
+Unsatisfied dependency expressed through field 'resolver'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException:
+Error creating bean with name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration':
+Unsatisfied dependency expressed through method 'setConfigurers' parameter 0;
+nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException:
+Error creating bean with name 'openEntityManagerInViewInterceptorConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]:
+Unsatisfied dependency expressed through method 'openEntityManagerInViewInterceptorConfigurer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException:
+Error creating bean with name 'openEntityManagerInViewInterceptor' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration$JpaWebConfiguration.class]:
+Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource
+[org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed;
+nested exception is org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation

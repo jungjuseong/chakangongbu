@@ -43,3 +43,14 @@
 
 
 
+# mysql-8 install
+
+1. 설치 방법
+
+https://computingforgeeks.com/how-to-install-mysql-8-on-ubuntu/
+
+2. root로 원격에서 접근할 수 있도록
+
+mysql -u root -p
+
+RENAME USER 'root'@'localhost' TO 'root'@'%';

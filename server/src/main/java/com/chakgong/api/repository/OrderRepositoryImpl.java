@@ -69,7 +69,7 @@ public class OrderRepositoryImpl implements OrderRepositoryExt {
     }
     Timestamp orderDate = Timestamp.from(Instant.now());
     em.createNativeQuery("""
-        INSERT INTO ecomm.orders (address_id, card_id, customer_id, order_date, total, status) 
+        INSERT INTO chakgong.orders (address_id, card_id, customer_id, order_date, total, status) 
         VALUES(?, ?, ?, ?, ?, ?)
         """)
         .setParameter(1, m.getAddress().getId())
@@ -83,7 +83,7 @@ public class OrderRepositoryImpl implements OrderRepositoryExt {
     CartEntity cart = oCart.orElseThrow(() -> new ResourceNotFoundException(String.format("Cart not found for given customer (ID: %s)", m.getCustomerId())));
     itemRepo.deleteCartItemJoinById(cart.getItems().stream().map(i -> i.getId()).collect(toList()), cart.getId());
     OrderEntity entity = (OrderEntity) em.createNativeQuery("""
-        SELECT o.* FROM ecomm.orders o WHERE o.customer_id = ? AND o.order_date >= ?
+        SELECT o.* FROM chakgong.orders o WHERE o.customer_id = ? AND o.order_date >= ?
         """, OrderEntity.class)
         .setParameter(1, m.getCustomerId())
         .setParameter(2, OffsetDateTime.ofInstant(orderDate.toInstant(), ZoneId.of("Z")).truncatedTo(
