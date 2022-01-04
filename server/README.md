@@ -1,3 +1,24 @@
+# 착한공부
+
+##  server: API 서버
+
+# mysql-8 install
+
+1. 설치 방법
+https://computingforgeeks.com/how-to-install-mysql-8-on-ubuntu/
+
+2. root로 원격에서 접근할 수 있도록
+
+mysql -u root -p
+RENAME USER 'root'@'localhost' TO 'root'@'%';
+
+## app: reference client app
+
+## admin: 관리자 app
+
+
+
+# 데이터 schema
 
 ## 학생/학부모
 
@@ -43,14 +64,4 @@
 
 
 
-# mysql-8 install
 
-1. 설치 방법
-
-https://computingforgeeks.com/how-to-install-mysql-8-on-ubuntu/
-
-2. root로 원격에서 접근할 수 있도록
-
-mysql -u root -p
-
-RENAME USER 'root'@'localhost' TO 'root'@'%';
