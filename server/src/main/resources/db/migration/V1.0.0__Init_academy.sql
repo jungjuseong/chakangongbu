@@ -1,8 +1,6 @@
 create schema if not exists chakgong;
 use chakgong;
 
-use chakgong;
-
 create TABLE IF NOT EXISTS owner (
 	id BINARY(16) not NULL,
 	name varchar(10),

@@ -9,13 +9,13 @@ info:
     email: support@chakgong.com
   license:
     name: MIT
-    url: https://github.com/jungjuseong/chakangongbu
+    url: https://https://github.com/jungjuseong/chakangongbu
   version: 1.0.0
 externalDocs:
   description: Any document link you want to generate along with API.
   url: http://swagger.io
 servers:
-  - url: https://chakgong.swagger.io/v2
+  - url: https://ecommerce.swagger.io/v2
 tags:
   - name: cart
     description: Everything about cart
@@ -34,86 +34,10 @@ tags:
     description: Operations about shippings
   - name: product
     description: Operations about products
-  - name: academy
-    description: Operations about academies
   - name: user
     description: Operations about signup, signin and so on
 
 paths:
-  /api/v1/academies:
-    get:
-      tags:
-        - academy
-      summary: Returns all the matched academies
-      description: Returns the academies that matches the given query criteria
-      operationId: queryAcademies
-      parameters:
-        - name: tag
-          in: query
-          description: Academy tag
-          required: false
-          schema:
-            type: string
-        - name: name
-          in: query
-          description: Academy name
-          required: false
-          schema:
-            type: string
-        - name: page
-          in: query
-          description: Query page number
-          required: false
-          schema:
-            type: integer
-            format: int32
-            default: 1
-        - name: size
-          in: query
-          description: Query page size
-          required: false
-          schema:
-            type: integer
-            format: int32
-            default: 10
-      responses:
-        200:
-          description: For successful fetch.
-          content:
-            application/xml:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Academy'
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Academy'
-  /api/v1/academies/{id}:
-    get:
-      tags:
-        - academy
-      summary: Returns a product
-      description: Returns the product that matches the given product ID
-      operationId: getProduct
-      parameters:
-        - name: id
-          in: path
-          description: Product Identifier
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: For successful fetch.
-          content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Product'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Product'
   /api/v1/carts/{customerId}:
     get:
       tags:

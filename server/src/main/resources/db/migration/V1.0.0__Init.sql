@@ -1,6 +1,44 @@
 create schema if not exists chakgong;
 use chakgong;
 
+create TABLE IF NOT EXISTS owner (
+	id BINARY(16) not NULL,
+	name varchar(10),
+	phone varchar(13),
+	email varchar(50),
+    reg_date datetime,
+	PRIMARY KEY(id)
+);
+insert into owner values(UUID_TO_BIN('77777770-f957-430e-8689-b5129c0bb75f'), '정서한','010-6821-1250','jungjuseong@gmail.com', current_timestamp());
+insert into owner values(UUID_TO_BIN('77777771-f957-430e-8689-b5129c0bb800'), '공신','010-9000-8888','gongsin@gmail.com', current_timestamp());
+insert into owner values(UUID_TO_BIN('77777772-f957-430e-8689-b5129c0bb800'), '한국인','010-2221-1234','iamkorean@gmail.com', current_timestamp());
+
+select * from owner;
+
+create TABLE IF NOT EXISTS academy (
+	id BINARY(16) not NULL,
+	owner_id BINARY(16) not NULL,
+	name varchar(100) NOT NULL,
+	address varchar(200),
+	description TEXT,
+    keyword varchar(1024),
+	image_url varchar(250),
+	video_url varchar(250),
+    reg_date datetime,
+	FOREIGN KEY(owner_id) REFERENCES owner(id),
+	PRIMARY KEY(id)
+);
+
+insert into academy values(UUID_TO_BIN('00000000-b5c6-4896-987c-f30f3678f602'), UUID_TO_BIN('77777770-f957-430e-8689-b5129c0bb75f'),
+ '첨이지 어서와', '서울시 강남구 대치동', '여기가 대치동에서 제일 잘 가르킨다.', '#최단기#말코사슴#모두합격#최고의성실','http://image_url', 'http://video_url', current_timestamp());
+
+insert into academy values(UUID_TO_BIN('00000001-b5c6-4896-987c-f30f3678f602'), UUID_TO_BIN('77777771-f957-430e-8689-b5129c0bb800'),
+ '조만간 합격', '경기도 성남시 분당구', '여기가 분당에서는 짱.', '#먼지가되어#알라스카로#집중집중#마라톤교실','http://image_url', 'http://video_url', current_timestamp());
+
+ insert into academy values(UUID_TO_BIN('00000001-b5c6-4896-987c-f30f3678f603'), UUID_TO_BIN('77777771-f957-430e-8689-b5129c0bb800'),
+ '또 하나의 신화', '경기도 성남시 분당구', '여기가 정자동 바로 학원.', '#딴데로가지말기#몰리브로#또박또박#수학교실','http://image_url', 'http://video_url', current_timestamp());
+
+
 create TABLE IF NOT EXISTS product (
 	id BINARY(16) not NULL,
 	name varchar(56) NOT NULL,
