@@ -1,7 +1,9 @@
 package com.chakgong.api.controller;
 
+import com.chakgong.api.AcademyApi;
 import com.chakgong.api.ProductApi;
 import com.chakgong.api.hateoas.AcademyRepresentationModelAssembler;
+import com.chakgong.api.model.Academy;
 import com.chakgong.api.model.Product;
 import com.chakgong.api.service.AcademyService;
 import org.springframework.http.ResponseEntity;
@@ -28,13 +30,13 @@ public class AcademyController implements AcademyApi {
   }
 
   @Override
-  public ResponseEntity<Product> getProduct(String id) {
+  public ResponseEntity<Academy> getAcademy(String id) {
     return service.getAcademy(id).map(assembler::toModel).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
   }
 
   @Override
-  public ResponseEntity<List<Academy>> queryProducts(@Valid String tag, @Valid String name,
-      @Valid Integer page, @Valid Integer size) {
+  public ResponseEntity<List<Academy>> queryAcademies(@Valid String tag, @Valid String name,
+                                                      @Valid Integer page, @Valid Integer size) {
     return ok(assembler.toListModel(service.getAllAcademy()));
   }
 }

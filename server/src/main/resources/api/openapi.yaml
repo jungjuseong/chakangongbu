@@ -4,7 +4,7 @@ info:
   description: >
     '***착한공부***를 위한 API. You can find out more about Swagger at [swagger.io](http://swagger.io).
     Description supports markdown markup. For example, you can use the `inline code` using back ticks.'
-  termsOfService: https://https://github.com/jungjuseong/chakangongbu
+  termsOfService: https://github.com/jungjuseong/chakangongbu
   contact:
     email: support@chakgong.com
   license:
@@ -96,7 +96,7 @@ paths:
         - academy
       summary: Returns a product
       description: Returns the product that matches the given product ID
-      operationId: getProduct
+      operationId: getAcademy
       parameters:
         - name: id
           in: path
@@ -110,10 +110,10 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: '#/components/schemas/Academy'
             application/json:
               schema:
-                $ref: '#/components/schemas/Product'
+                $ref: '#/components/schemas/Academy'
   /api/v1/carts/{customerId}:
     get:
       tags:
@@ -962,6 +962,34 @@ paths:
                 $ref: '#/components/schemas/SignedInUser'
 components:
   schemas:
+    Academy:
+      description: Product information
+      type: object
+      properties:
+        id:
+          description: Product identifier
+          type: string
+        name:
+          description: Product Name
+          type: string
+        description:
+          description: Prodcut's description
+          type: string
+        imageUrl:
+          description: Product image's URL
+          type: string
+        price:
+          description: Product price
+          type: BigDecimal
+        count:
+          description: Product count
+          type: integer
+          format: int32
+        tag:
+          description: Tags associated with the product
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
     Cart:
       description: Shopping Cart of the user
       type: object
