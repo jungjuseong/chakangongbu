@@ -1,0 +1,48 @@
+.header{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 155px;
+    padding: 40.2px 61px 8px 41px;
+    background-color: #6116d6;
+    align-items: baseline;
+    .main_logo{
+        display: flex;
+        align-items: center;
+    }
+    .header_menu{
+        height: 27px;
+        font-family: IBMPlexSansKR;
+        font-size: 18px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.44;
+        letter-spacing: normal;
+        text-align: center;
+        color: #fff;
+        .event{
+            width: 132px;
+            border-right: 2px solid white;
+        }
+        .info{
+            width: 132px;
+            border-right: 2px solid white;
+        }
+        .quizbank{
+            width: 132px;
+        }
+        .menu_logout{
+            margin-left: 42px;
+            font-family: IBMPlexSansKR;
+            font-size: 15px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 2.13;
+            letter-spacing: normal;
+            text-align: left;
+            color: #fff;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CartClient from "../api/CartClient";
 import CustomerClient from "../api/CustomerClient";
 import OrderClient from "../api/OrderClient";
@@ -9,7 +9,7 @@ import CartItem from "./CartItem";
 const Cart = ({ auth }) => {
   const [grandTotal, setGrandTotal] = useState(0);
   const [noRecMsg, setNoRecMsg] = useState("Loading...");
-  const history = useHistory();
+
   const cartClient = new CartClient(auth);
   const orderClient = new OrderClient(auth);
   const customerClient = new CustomerClient(auth);
@@ -106,7 +106,7 @@ const Cart = ({ auth }) => {
       };
       const orderRes = await orderClient.add(payload);
       if (orderRes && orderRes.success) {
-        history.push("/orders");
+    
       } else {
         setNoRecMsg(
           orderRes && typeof orderRes === "string"

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CartClient from "../api/CartClient";
 import { updateCart, useCartContext } from "../hooks/CartContext";
 
 const ProductCard = ({ auth, product }) => {
-  const history = new useHistory();
+
   const cartClient = new CartClient(auth);
   const { cartItems, dispatch } = useCartContext();
   const [msg, setMsg] = new useState("");
@@ -28,7 +28,6 @@ const ProductCard = ({ auth, product }) => {
 
   const checkLogin = () => {
     if (!auth.token) {
-      history.push("/login");
       return false;
     }
     return true;
@@ -55,7 +54,6 @@ const ProductCard = ({ auth, product }) => {
     if (isLoggedIn && product?.id) {
       const res = await callAddItemApi();
       if (res && res.success) {
-        history.push("/cart");
       } else {
         setMsg(res && typeof res === "string" ? res : res.error.message);
       }

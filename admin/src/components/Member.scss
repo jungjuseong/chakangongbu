@@ -1,0 +1,160 @@
+.mamber_container{
+    width: 900px;
+    .my_membership{
+        height: 37px;
+        margin: 50px 76.5px 58.6px 34.5px;
+        font-family: IBMPlexSansKR;
+        font-size: 25px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-align: left;
+        color: #6116d6;
+    }
+    .profill{
+        display: flex;
+        .profill_img{
+            width: 141px;
+            height: 140px;
+        }
+        .profill_info{
+            .profill_badge{
+                width: 73px;
+                height: 33px;
+                margin: 0px 181.8px 6.9px 51px;
+            }
+            .profill_cram{
+                margin: 6.9px 0px 0px 56px;
+                font-family: IBMPlexSansKR;
+                font-size: 22px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.41;
+                letter-spacing: normal;
+                text-align: left;
+                color: #000;
+            }
+            .profill_name{
+                margin: 0px 0px 15px 56.5px;
+                font-family: IBMPlexSansKR;
+                font-size: 18px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.72;
+                letter-spacing: normal;
+                text-align: left;
+                color: #000;
+            }
+            .profill_text{
+                margin: 0px 0px 0px 56.5px;
+                font-family: IBMPlexSansKR;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.86;
+                letter-spacing: normal;
+                text-align: left;
+                color: #000;
+            }
+            .profill_start{
+                margin: 0.1px 0px 38.9px 56.5px;
+                font-family: IBMPlexSansKR;
+                font-size: 20px;
+                font-weight: 300;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.55;
+                letter-spacing: normal;
+                text-align: left;
+                color: #000;
+            }
+        }
+        .linev{
+            width: 2.5px;
+            height: 162.1px;
+            background-color: #e6e6e6;
+            margin: 5px 53.2px 32px 17.1px;
+        }
+        .payment_info{
+            font-family: IBMPlexSansKR;
+            font-size: 15px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 2.67;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000;
+            margin: 30px 79px 54px 0px;
+            .month_claim{
+                white-space:pre
+            }
+            .claim_cash{
+                white-space:pre
+            }
+            .auto{
+                white-space:pre
+            }
+        }
+        .sub_btn{
+            width: 150px;
+            margin: 33px 0px 0px 0px;
+            .open_claim{
+                margin: 0px 0px 10px 0px;
+                font-family: IBMPlexSansKR;
+                font-size: 15px;
+                font-weight: 300;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.67;
+                letter-spacing: normal;
+                text-align: left;
+                color: #848484;
+                text-decoration:underline
+            }
+            .change{
+                margin: 50px 0px 0px 0px;
+                font-family: IBMPlexSansKR;
+                font-size: 15px;
+                font-weight: 300;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.67;
+                letter-spacing: normal;
+                text-align: left;
+                color: #848484;
+                text-decoration:underline
+            }
+        }
+    }
+    .lineh{
+        width: 900px;
+        height: 1px;
+        background-color: #8d9093;
+    }
+    .membership_setting{
+        font-family: IBMPlexSansKR;
+        font-size: 18px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.39;
+        letter-spacing: normal;
+        text-align: right;
+        color: #8f55e4;
+        .membership_update{
+            
+            text-decoration:underline;
+
+        }
+        .subscribe_cancel{
+            margin-left: 55px;
+            text-decoration:underline;
+        }
+    }
+}

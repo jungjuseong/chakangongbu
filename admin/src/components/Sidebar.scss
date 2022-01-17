@@ -1,0 +1,24 @@
+.sidebar{
+    width: 310.5px;
+    height: 644px;
+    margin: 1px 32.5px 0 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    .sidebar-item{
+        width: 310.5px;
+        height: 50px;
+        padding: 12px 0px 12px 51px;
+        font-family: IBMPlexSansKR;
+        font-size: 18px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.44;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000;
+        &.on{
+            background-color: #5a5a5a;
+            color: #fff
+        }
+    }
+}

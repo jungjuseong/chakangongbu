@@ -4,11 +4,12 @@ import ProductClient from "../api/ProductClient";
 import { updateCart, useCartContext } from "../hooks/CartContext";
 import Products from "./Products";
 
-const ProductList = ({ auth }) => {
+const ProductList = (props) => {
   const [productList, setProductList] = useState();
   const [noRecMsg, setNoRecMsg] = useState("Loading...");
   const { dispatch } = useCartContext();
-
+  const auth = props.auth
+  
   useEffect(() => {
     async function fetchProducts() {
       const res = await new ProductClient().fetchList();

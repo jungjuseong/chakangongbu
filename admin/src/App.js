@@ -1,62 +1,54 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import './App.scss'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
 import ProductList from "./components/ProductList";
 import Login from "./components/Login";
 import useToken from "./hooks/useToken";
-import Cart from "./components/Cart";
-import ProductDetail from "./components/ProductDetail";
+import Main from "./components/Main";
 import NotFound from "./components/NotFound";
 import Auth from "./api/Auth";
 import { CartContextProvider } from "./hooks/CartContext";
-import Orders from "./components/Orders";
+import { useEffect } from 'react';
 
-function App() {
+function App(props) {
   const { token, setToken } = useToken();
   const auth = new Auth(token, setToken);
   const loginComponent = (props) => (
-    <Login {...props} uri="/login" auth={auth} />
+    <Login {...props} uri="/login" auth={auth} history={props.history} />
   );
-
-  const productListComponent = (props) => <ProductList auth={auth} />;
-
-  return (
-    <div className="flex flex-col min-h-screen h-full ">
-      <Router>
-        <Header userInfo={token} auth={auth} />
-        <div className="flex-grow flex-shrink-0 p-4">
-          <CartContextProvider>
-            <Switch>
-              <Route path="/" exact render={() => productListComponent()} />
-              <Route
-                path="/login"
-                render={(props) =>
-                  token ? productListComponent() : loginComponent(props)
-                }
-              />
-              <Route
-                path="/cart"
-                render={(props) =>
-                  token ? <Cart auth={auth} /> : loginComponent(props)
-                }
-              />
-              <Route
-                path="/orders"
-                render={(props) =>
-                  token ? <Orders auth={auth} /> : loginComponent(props)
-                }
-              />
-              <Route
-                path="/products/:id"
-                render={() => <ProductDetail auth={auth} />}
-              />
-              <Route path="*" exact component={NotFound} />
-            </Switch>
-          </CartContextProvider>
+  const MainComponent = (props) => <Main token={token} auth={auth} />;
+  console.log(window.location)
+  return (   
+    <Router>
+      <div className="containers"> 
+        < div className="flex-grow flex-shrink-0 p-4">
+        <Header history={props.history} userInfo={token} auth={auth} />
+          <div className="main_container">
+          <Sidebar></Sidebar>
+          <CartContextProvider>        
+            <Routes>
+              <Route path="/members" element={<Main token={token} auth={auth} />} />
+              <Route path="/temp" element={NotFound} />
+              <Route path="*" element={NotFound} />
+            </Routes>
+          </CartContextProvider>   
+          </div>
         </div>
-        <Footer />
-      </Router>
-    </div>
+        <Routes>
+        <Route
+          path="/"
+          element={<Login {...props} uri="/login" auth={auth}/>
+          }
+        />
+        <Route
+          path="/login"
+          element={<Login {...props} uri="/login" auth={auth}/>
+          }
+        />
+        </Routes>
+      </div> 
+    </Router>
   );
 }
 

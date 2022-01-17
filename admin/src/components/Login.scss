@@ -1,0 +1,57 @@
+.background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: white;
+
+.login_container{
+    position: absolute;
+    width: 392px;
+    height: 500px;
+    background-color: #fff;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .login_logo{
+        text-align: -webkit-right;    
+    }
+    .login_form{
+        .input{
+            width: 392px;
+            height: 58px;
+            margin: 0px 0 0;
+            border-radius: 15px;
+            border: solid 1px #949494;
+        }
+        .submit{
+            .submit_remember{
+                justify-content: space-between;
+                display: flex;
+                .remember{
+                    .remember_btn{
+                        display: inline-block; width: 14px; height: 14px; border: 2px solid #bcbcbc; cursor: pointer;
+                    }
+        
+                }
+                .submit_btn{
+                    width: 138px;
+                    height: 52px;
+                    background : url('./../images/login_btn.png') 100%
+                }
+            }
+
+        }
+        .signup_find{
+            justify-content: space-between;
+            display: flex;
+            .sign_up{
+
+            }
+            .find_password{
+            }
+        }
+    }
+}
+}

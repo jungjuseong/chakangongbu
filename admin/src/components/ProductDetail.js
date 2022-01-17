@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ProductClient from "../api/ProductClient";
 import CartClient from "../api/CartClient";
 import { updateCart, useCartContext } from "../hooks/CartContext";
@@ -8,7 +8,7 @@ const ProductDetail = ({ auth }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [msg, setMsg] = new useState("");
-  const history = new useHistory();
+
   const { cartItems, dispatch } = useCartContext();
   const cartClient = new CartClient(auth);
 
@@ -31,7 +31,7 @@ const ProductDetail = ({ auth }) => {
 
   const checkLogin = () => {
     if (!auth.token) {
-      history.push("/login");
+ 
       return false;
     }
     return true;
@@ -58,7 +58,7 @@ const ProductDetail = ({ auth }) => {
     if (isLoggedIn && product?.id) {
       const res = await callAddItemApi();
       if (res && res.success) {
-        history.push("/cart");
+  
       } else {
         setMsg(res && typeof res === "string" ? res : res.error.message);
       }
