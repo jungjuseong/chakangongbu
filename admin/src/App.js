@@ -22,7 +22,7 @@ function App(props) {
   return (   
     <Router>
       <div className="containers"> 
-        < div className="flex-grow flex-shrink-0 p-4">
+        < div className="flex-grow flex-shrink-0">
         <Header history={props.history} userInfo={token} auth={auth} />
           <div className="main_container">
           <Sidebar></Sidebar>

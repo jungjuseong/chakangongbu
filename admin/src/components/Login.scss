@@ -25,13 +25,49 @@
             border-radius: 15px;
             border: solid 1px #949494;
         }
+        .idtext{
+            margin: 23px 0px 0px 6px;
+            font-family: IBMPlexSansKR;
+            font-size: 19px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.68;
+            letter-spacing: normal;
+            text-align: left;
+            color: #707070;
+        }
+        .passwordtext{
+            margin: 23px 0px 3px 6px;
+            font-family: IBMPlexSansKR;
+            font-size: 19px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.68;
+            letter-spacing: normal;
+            text-align: left;
+            color: #707070;
+        }
         .submit{
             .submit_remember{
                 justify-content: space-between;
                 display: flex;
+                margin-top: 29px;
                 .remember{
+                    vertical-align:middle;
+                    font-family: IBMPlexSansKR;
+                    font-size: 15px;
+                    font-weight: 300;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 2.13;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #797979;
                     .remember_btn{
                         display: inline-block; width: 14px; height: 14px; border: 2px solid #bcbcbc; cursor: pointer;
+                        margin-right: 7px;
                     }
         
                 }
@@ -46,10 +82,30 @@
         .signup_find{
             justify-content: space-between;
             display: flex;
+            margin-top: 61px;
             .sign_up{
-
+                font-family: IBMPlexSansKR;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.94;
+                letter-spacing: normal;
+                text-align: left;
+                color: #6a1cdb;
+                text-decoration:underline
             }
             .find_password{
+                font-family: IBMPlexSansKR;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.94;
+                letter-spacing: normal;
+                text-align: left;
+                color: #6a1cdb;
+                text-decoration:underline
             }
         }
     }

@@ -20,7 +20,7 @@ const Member = ({ auth }) => {
   }
 
   const pgapi = () =>{
-      console.log("api 로직")
+      window.open('http://ec2-3-34-144-94.ap-northeast-2.compute.amazonaws.com:9000/pgapi','target', 'top=100, left=300, width=900, height=600, toolbar=no, menubar=no, location=no, status=no, scrollbars=no')
   }
 
   return (

@@ -37,3 +37,9 @@ app.security.jwt:
   keystore-password: password
   key-alias: jwt-sign-key
   private-key-passphrase: password
+
+spring.mvc:
+  view:
+    prefix: /WEB-INF/sample/
+    suffix: .jsp
+  static-path-pattern: /resources/**

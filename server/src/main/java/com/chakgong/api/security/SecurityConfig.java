@@ -29,6 +29,7 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -96,6 +97,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers(HttpMethod.POST, Constants.REFRESH_URL).permitAll()
         .antMatchers(HttpMethod.GET, Constants.PRODUCTS_URL).permitAll()
         .antMatchers(Constants.H2_URL_PREFIX).permitAll()
+        .antMatchers("/pgapi").permitAll()
+        .antMatchers("/pgapi/**").permitAll()
+        .antMatchers("/WEB-INF/**").permitAll()
+        .antMatchers("/resources/css/**").permitAll()
+        .antMatchers("/resources/js/**").permitAll()
         .mvcMatchers(HttpMethod.POST, "/api/v1/addresses/**")
         .hasAuthority(RoleEnum.ADMIN.getAuthority())
         .anyRequest().authenticated()

@@ -1,6 +1,7 @@
 .sidebar{
     width: 310.5px;
-    height: 644px;
+    height: 100%;
+    min-height: 644px;
     margin: 1px 32.5px 0 0;
     background-color: rgba(0, 0, 0, 0.05);
     .sidebar-item{

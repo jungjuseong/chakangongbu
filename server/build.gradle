@@ -4,6 +4,7 @@ plugins {
     id 'java'
     id "org.flywaydb.flyway" version "8.3.0"
     id 'org.hidetake.swagger.generator' version '2.18.2'
+    id 'war'
 }
 
 group = 'com.chakgong.api'
@@ -69,6 +70,10 @@ dependencies {
     // Security Ends
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    // JSP
+    implementation 'javax.servlet:jstl'
+    implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
 }
 
 test {

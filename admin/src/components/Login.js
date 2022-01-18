@@ -36,7 +36,7 @@ const Login = ({ uri, auth }) => {
         <form className="login_form" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <div>
+              <div className='idtext'>
                 아이디
               </div>
               <span
@@ -59,7 +59,7 @@ const Login = ({ uri, auth }) => {
               />
             </div>
             <div>
-              <div>
+              <div className='passwordtext'>
                 비밀번호
               </div>
               <label htmlFor="password" className="sr-only">

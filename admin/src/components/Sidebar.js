@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Sidebar() {
 
   const menus = [
-    { name: "나의 맴버십", path: "/members" },
+    { name: "나의 멤버십", path: "/members" },
     { name: "학원 정보 등록 및 수정", path: "/temp" },
     { name: "학원 쿠폰/광고 등록 및 신청", path: "/temp" },
     { name: "나의 정보 수정", path: "/temp" }
