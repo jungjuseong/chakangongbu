@@ -4,9 +4,9 @@
 /* 이미지 */
 /***************************************************/
 /* 바탕 배경 이미지 최적의 이미지 크기는 468 * 251px */
-.pop-address-search { background-image: url('./logo192.png'); }
+/* .pop-address-search { background-image: url('./logo192.png'); } */
 /* 회사 로고 이미지 이미지 크기는 149 * 14px */
-.pop-address-search .logo { background: url('./logo512.png') no-repeat; background-position:center; }
+/* .pop-address-search .logo { background: url('./logo512.png') no-repeat; background-position:center; } */
 
 /***************************************************/
 /* 배경색상 */
